@@ -16,9 +16,9 @@ Route::post('/attemptRegister', [AuthController::class, 'attemptRegister'])->nam
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/cart', function (){
-    return view('pages.cart');
-})->name('cart')->middleware('auth');
+//Route::get('/cart', function (){
+//    return view('pages.cart');
+//})->name('cart')->middleware('auth');
 
 Route::get('/wallet', function (){
     return view('pages.wallet');
@@ -34,4 +34,7 @@ Route::get('/productDetails/{id}',
    ->middleware('auth');
 
 
-//Route::resource('cart', CartController::class)->middleware('auth');
+Route::resource('cart', CartController::class,)->names([
+    'index'=>'cart',
+    ]
+)->middleware('auth');
