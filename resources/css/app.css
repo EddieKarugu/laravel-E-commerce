@@ -1,0 +1,428 @@
+@import "tailwindcss";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans:
+        "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
+html,
+body {
+    box-sizing: border-box;
+    height: 100vh;
+    color: #000;
+    /* background-image: url("/var/www/ecomm/public/assets/images/chef.png");
+    background-size: 100%; */
+}
+.header {
+    background: rgb(245, 247, 249);
+    padding: 20px;
+    border-radius: 12px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    height: fit-content;
+    position: fixed;
+}
+.logo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo h5 {
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 5px;
+    background: linear-gradient(60deg, #ff0000, #ff7300, #fffb00, #ff0000);
+    background-clip: text;
+    color: transparent;
+}
+.btn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: #01101a;
+    z-index: 0;
+    font-weight: bold;
+    position: relative;
+    color: #fffb00;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    min-width: 100px;
+}
+.btn::before {
+    content: "";
+    position: absolute;
+    border-radius: 12px;
+    z-index: -1;
+    inset: -2px;
+    background: linear-gradient(
+        45deg,
+        #ff0000,
+        #ff7300,
+        #fffb00,
+        #48ff00,
+        #00ffd5,
+        #002bff,
+        #ff00c8,
+        #2babf5,
+        #ff0000
+    );
+    background-size: 600%;
+    animation: glow 20s linear infinite;
+    filter: blur(8px);
+    opacity: 0;
+}
+.btn::after {
+    content: "";
+    position: absolute;
+    border-radius: 12px;
+    z-index: -1;
+    inset: -2px;
+    background: #0a0a0a;
+}
+.btn:hover::before {
+    opacity: 1;
+}
+.btn:active::after {
+    background: transparent;
+}
+
+@keyframes glow {
+    0%,
+    100% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 300% 0;
+    }
+}
+.headerBtn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.headerBtn a {
+    /*background: #ff7300;*/
+    color: #010101;
+    margin: 2px;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    transition: 500ms linear;
+    font-weight: bold;
+}
+.headerBtn .active {
+    background: #f5dd05;
+    color: #01101a;
+    margin: 2px;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    transition: 500ms linear;
+    font-weight: bold;
+}
+
+.headerBtn a:hover {
+    background: #fffb11;
+    color: #0a0a0a;
+    transition: 500ms linear;
+}
+.headerBtn a:active {
+    background: #fff;
+}
+.username {
+    text-align: center;
+}
+.login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #101820;
+    padding: 20px;
+    border-radius: 20px;
+}
+.login .input {
+    padding: 10px;
+    position: relative;
+}
+.input input {
+    border: 2px #fff solid;
+    border-radius: 12px;
+    background: transparent;
+    padding: 10px 16px;
+    transition: 500ms linear;
+    color: #fffb00;
+}
+.input input:focus {
+    border: 2px #fffb00 solid;
+    transition: 500ms linear;
+    outline: none;
+}
+.input label {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 500ms linear;
+}
+.input input:focus ~ label,
+.input input:valid ~ label,
+.input input:-webkit-autofill ~ label,
+.input input:not(:placeholder-shown) ~ label {
+    position: absolute;
+    left: 30px;
+    top: 10px;
+    background: #01101a;
+    border-radius: 10px;
+    padding: 2px 6px;
+    font-size: 0.8em;
+    transition: 500ms linear;
+}
+.input input:-webkit-autofill,
+.input input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #101820 inset !important;
+    -webkit-text-fill-color: #fffb00;
+}
+.Loogo h5 {
+    margin-top: 80px;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 5px;
+    background: linear-gradient(60deg, #ff0000, #ff7300, #fffb00);
+    background-clip: text;
+    color: transparent;
+}
+.forgotPass {
+    display: flex;
+    justify-self: end;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    background: #01101a;
+    padding: 6px;
+    border-radius: 12px;
+}
+.forgotPass:hover {
+    background: #0a0a0a;
+}
+.redirect {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.redirect a {
+    color: #00f;
+}
+.redirect a:hover {
+    text-decoration: underline;
+}
+.errors h5 {
+    color: red;
+    text-align: center;
+    font-size: 0.9em;
+}
+.products {
+    position: relative;
+    top: 220px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+.product {
+    border: 2px solid #fffb00;
+    padding: 10px 1px;
+    margin: 2px;
+    border-radius: 12px;
+    position: relative;
+    height: 200px;
+    width: 150px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.product:hover {
+    background: gray;
+}
+.product img {
+    width: 100px;
+    max-height: 70px;
+    display: flex;
+    justify-self: center;
+}
+.product h5 {
+    font-weight: bold;
+    color: #fffb00;
+}
+.product h1 {
+    font-weight: bold;
+    color: #f53003;
+}
+.product p {
+    max-height: 70px;
+    overflow: hidden;
+}
+.details a {
+    background: #fffb00;
+    padding: 4px 6px;
+    position: absolute;
+    bottom: 0;
+    right: 1px;
+    border-radius: 12px 0;
+    color: #f53003;
+    font-weight: bold;
+}
+.details a:hover {
+    background: #f53003;
+    color: #fffb00;
+    transition: 200ms linear;
+}
+.bottom {
+    position: fixed;
+    top: 130px;
+    background: rgb(245, 247, 249);
+    z-index: 1;
+    width: 100%;
+}
+.tiles {
+    display: flex;
+    justify-content: space-between;
+    overflow: scroll;
+    scrollbar-width: none;
+    margin: 10px;
+}
+.tile {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #fffb00;
+    border-radius: 29px;
+    margin-left: 6px;
+    padding: 4px 7px;
+    cursor: pointer;
+    transition: 500ms linear;
+}
+.activeTile {
+    display: flex;
+    border: 2px solid #f53003;
+    border-radius: 29px;
+    margin-left: 6px;
+    padding: 4px 7px;
+    background: #fffb00;
+    cursor: pointer;
+    color: #101820;
+    transition: 100ms linear;
+}
+.tile img,
+.activeTile img {
+    max-width: 22px;
+    display: flex;
+    align-self: center;
+}
+.tile h5,
+.activeTile h5 {
+    font-size: 0.9em;
+    font-weight: bold;
+    padding-left: 5px;
+    display: flex;
+    align-self: center;
+}
+.tile:hover {
+    background: #f5dd05;
+    color: #000;
+    transition: 100ms linear;
+}
+.search {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.search input {
+    border: 2px solid #fffb00;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+}
+.search button {
+    background: #e5ff00;
+    color: #101820;
+    font-weight: bold;
+    padding: 10px 16px;
+    border-radius: 12px;
+    border: none;
+}
+.search button:hover {
+    background: #fffb00;
+}
+.head {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+.backBtn {
+    background: #f5dd05;
+    padding: 10px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1em;
+    font-weight: bold;
+    transition: 200ms linear;
+}
+.backBtn:hover {
+    padding: 10px 16px;
+    transition: 200ms linear;
+}
+.head h5 {
+    font-weight: bold;
+    font-size: 1.2em;
+    display: flex;
+    align-self: center;
+}
+.btns {
+    display: flex;
+    justify-content: center;
+}
+.cartBtn {
+    background: #f00;
+    padding: 10px 20px;
+    border-radius: 12px;
+    min-width: 200px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    transition: 200ms linear;
+}
+.foot {
+    height: 30px;
+}
+.cartBtn:hover {
+    scale: 1.1;
+    transition: 200ms linear;
+}
+.image {
+    display: flex;
+    justify-self: center;
+    min-height: 200px;
+}
+.productDetails {
+    margin: 10px;
+}
+.productDetails h1 {
+    color: #f53003;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.productDetails h5 {
+    color: #fdbb04f3;
+    font-size: 1.2em;
+    font-weight: bold;
+}
