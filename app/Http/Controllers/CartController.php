@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,8 +14,8 @@ class CartController extends Controller
      */
     public function index()
     {
-        $carted = Auth::user()->carts;
-        return view('pages.cart', compact('carted'));
+        $cartItems = Auth::user()->carts;
+        return view('pages.cart', compact('cartItems'));
     }
 
     /**
@@ -28,9 +29,19 @@ class CartController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, $productId)
     {
-        
+        $carted = Product::FindorFail($productId);
+
+        Auth::user()->carts()->create([
+           'name'=> $carted->name,
+            'image'=> $carted->image,
+            'category'=> $carted->category,
+            'description'=> $carted->description,
+            'price'=> $carted->price,
+
+        ]);
+        return redirect()->route('productDetails', $carted->id)->with('success', 'Product added to cart');
     }
 
     /**

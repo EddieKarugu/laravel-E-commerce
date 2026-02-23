@@ -16,12 +16,16 @@
 </div>
 <div class="productDetails">
     <h1>{{ $product->name }}</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, nostrum porro error voluptas repudiandae dignissimos. Amet laboriosam aliquam aspernatur, explicabo molestiae, harum sit similique error, placeat quisquam nihil soluta eum?
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Perspiciatis, nostrum porro error voluptas repudiandae dignissimos.
+        Amet laboriosam aliquam aspernatur,
+        explicabo molestiae, harum sit similique error,
+        placeat quisquam nihil soluta eum?
     <br>{{ $product->description }}</p>
     <h5>Ksh {{ $product->price }}</h5>
 </div>
 <div class="btns">
-    <a href="" class="cartBtn">Add to Cart</a>
+    <a href="{{ route('cart.store', $product->id) }}" class="cartBtn">Add to Cart</a>
 </div>
 <div class="foot"></div>
 </body>

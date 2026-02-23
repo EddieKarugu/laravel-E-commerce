@@ -426,3 +426,12 @@ body {
     font-size: 1.2em;
     font-weight: bold;
 }
+.cartItems{
+    position: relative;
+    top: 200px;
+}
+.cartitem{
+    border: 2px solid #d6ed17;
+    width: 50%;
+    height: 100px;
+}
