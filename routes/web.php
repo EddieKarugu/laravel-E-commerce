@@ -33,8 +33,9 @@ Route::get('/productDetails/{id}',
    ->name('productDetails')
    ->middleware('auth');
 
+Route::get('/cart/store/{id}', [CartController::class, 'store'])->name('cart.store')->middleware('auth');
 
 Route::resource('cart', CartController::class,)->names([
-    'index'=>'cart',
+    'index'=>'cart'
     ]
 )->middleware('auth');

@@ -34,12 +34,11 @@ class CartController extends Controller
         $carted = Product::FindorFail($productId);
 
         Auth::user()->carts()->create([
-           'name'=> $carted->name,
-            'image'=> $carted->image,
-            'category'=> $carted->category,
-            'description'=> $carted->description,
-            'price'=> $carted->price,
-
+            'name'=>$carted->name,
+            'image'=>$carted->image,
+            'price'=>$carted->price,
+            'description'=>$carted->description,
+            'category'=>$carted->category,
         ]);
         return redirect()->route('productDetails', $carted->id)->with('success', 'Product added to cart');
     }

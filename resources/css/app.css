@@ -147,7 +147,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #101820;
+    background: #e3e3e0;
     padding: 20px;
     border-radius: 20px;
 }
@@ -161,7 +161,7 @@ body {
     background: transparent;
     padding: 10px 16px;
     transition: 500ms linear;
-    color: #fffb00;
+    color: #010101;
 }
 .input input:focus {
     border: 2px #fffb00 solid;
@@ -182,7 +182,7 @@ body {
     position: absolute;
     left: 30px;
     top: 10px;
-    background: #01101a;
+    background: #fffb00;
     border-radius: 10px;
     padding: 2px 6px;
     font-size: 0.8em;
@@ -190,8 +190,8 @@ body {
 }
 .input input:-webkit-autofill,
 .input input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px #101820 inset !important;
-    -webkit-text-fill-color: #fffb00;
+    -webkit-box-shadow: 0 0 0 30px #e3e3e0 inset !important;
+    -webkit-text-fill-color: #010101;
 }
 .Loogo h5 {
     margin-top: 80px;
@@ -208,12 +208,12 @@ body {
     justify-self: end;
     margin-top: 4px;
     margin-bottom: 10px;
-    background: #01101a;
     padding: 6px;
     border-radius: 12px;
 }
 .forgotPass:hover {
-    background: #0a0a0a;
+    text-decoration: underline;
+    color: #00f;
 }
 .redirect {
     display: flex;
@@ -426,12 +426,43 @@ body {
     font-size: 1.2em;
     font-weight: bold;
 }
-.cartItems{
+.CartItems{
     position: relative;
-    top: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    top: 160px;
 }
 .cartitem{
     border: 2px solid #d6ed17;
     width: 50%;
     height: 100px;
+    display: flex;
+    margin: 5px;
+    padding: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.CartItems h4{
+    font-weight: bold;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+}
+.cartitem img{
+    height: 50px;
+}
+.popup{
+    display: flex;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-self: center;
+    background-color: #4dbb00; /* Success Green */
+    color: white;
+    padding: 16px 24px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: opacity 0.5s ease;
 }

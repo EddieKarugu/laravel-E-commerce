@@ -7,7 +7,8 @@
                 <p>{{ $cartitem->description }}</p>
                 <h5>Ksh {{ $cartitem->price }}</h5>
             </div>
-
+        @empty
+            <h4>Your cart is empty</h4>
         @endforelse
     </div>
 </x-layout>

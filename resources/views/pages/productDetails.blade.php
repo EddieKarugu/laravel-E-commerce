@@ -11,6 +11,7 @@
         <h5>PHANSTORE</h5>
         <h1>ProductDetails</h1>
       </div>
+     <x-notifications/>
 <div class="image">
     <img src="{{ asset('assets/images/'. $product->image) }}" alt="image">
 </div>

@@ -1,7 +1,5 @@
 <x-layout title="Home" tab="Home">
-    <div class="username">
-        <p>Welcome <b>{{Auth()->user()?->username }}</b></p>
-    </div>
+   <x-notifications/>
 <div class="bottom">
 
    <livewire:tileselector :tiles="$tiles" />
