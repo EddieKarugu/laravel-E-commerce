@@ -39,3 +39,9 @@ Route::resource('cart', CartController::class,)->names([
     'index'=>'cart'
     ]
 )->middleware('auth');
+
+Route::get('/checkout', function (){
+    return view('pages.checkout');
+})
+    ->name('checkout')
+    ->middleware('auth');

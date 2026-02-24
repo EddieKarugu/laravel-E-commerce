@@ -19,7 +19,7 @@ class AuthController extends Controller
         ]);
         if(Auth::attempt($validated)){
             $request->session()->regenerate();
-            return redirect()->intended(route('home'))->with('success', 'Login successfull!');
+            return redirect()->intended(route('home'))->with('success', 'Welcome ' . auth()->user()->username);
         }
         return back()->withErrors([
             'username' => 'Invalid Credentials',
