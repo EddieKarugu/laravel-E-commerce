@@ -21,7 +21,9 @@
                 </div>
             </div>
         @empty
-            <h4>Your cart is empty</h4>
+            <div class="empty">
+                <h4>Your cart is empty</h4>
+            </div>
         @endforelse
     </div>
     <livewire:checkoutupdater />

@@ -4,6 +4,7 @@
 <head>
     <title>PhanStore | ProductDetails</title>
     @vite('resources/css/app.css')
+    @livewireStyles
 </head>
 <body>
      <div class="logo">
@@ -25,9 +26,7 @@
     <br>{{ $product->description }}</p>
     <h5>Ksh {{ $product->price }}</h5>
 </div>
-<div class="btns">
-    <a href="{{ route('cart.store', $product->id) }}" class="cartBtn">Add to Cart</a>
-</div>
+<livewire:cartupdater :cartitem="$product" />
 <div class="foot"></div>
 </body>
 </html>

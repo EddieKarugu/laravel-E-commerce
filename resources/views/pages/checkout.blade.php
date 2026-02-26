@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="checkoutPage">
-    <form method="post" action="">
+    <form action="">
         @csrf
         <label for="number">Input Phone Number</label>
         <input type="tel"

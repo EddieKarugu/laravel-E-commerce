@@ -40,7 +40,7 @@ class CartController extends Controller
             'description'=>$carted->description,
             'category'=>$carted->category,
         ]);
-        return redirect()->route('productDetails', $carted->id)->with('success', 'Product added to cart');
+//        return redirect()->route('productDetails', $carted->id)->with('success', 'Product added to cart');
     }
 
     /**

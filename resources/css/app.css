@@ -242,7 +242,7 @@ body {
 .product {
     border: 2px solid #fffb00;
     padding: 10px 1px;
-    margin: 2px;
+    margin: 6px;
     border-radius: 12px;
     position: relative;
     height: 200px;
@@ -261,7 +261,7 @@ body {
 }
 .product h5 {
     font-weight: bold;
-    color: #c99e00;
+    color: #ff4433;
 }
 .product h1 {
     font-weight: bold;
@@ -310,6 +310,9 @@ body {
     cursor: pointer;
     transition: 500ms linear;
 }
+.tile:active{
+    scale: 1.1;
+}
 .activeTile {
     display: flex;
     border: 2px solid #f53003;
@@ -352,17 +355,29 @@ body {
     border-radius: 20px;
     padding: 10px 20px;
     margin: 10px;
+    transition: 100ms linear
+}
+.search input:focus{
+    outline: none;
+    border: 2px solid #f53003;
+    transition: 100ms linear;
 }
 .search button {
-    background: #e5ff00;
+    background: #fffb00;
     color: #101820;
     font-weight: bold;
     padding: 10px 16px;
     border-radius: 12px;
+    transition: 200ms linear;
     border: none;
 }
 .search button:hover {
-    background: #fffb00;
+    background: #f53003;
+    transition: 200ms linear;
+    color: #fff;
+}
+.search button:active{
+    scale: 1.1;
 }
 .head {
     display: flex;
@@ -400,12 +415,22 @@ body {
     font-weight: bold;
     display: flex;
     justify-content: center;
-    transition: 200ms linear;
+    transition: 500ms linear;
+}
+.isCartedBtn{
+    background: #0f0;
+    padding: 10px 20px;
+    border-radius: 12px;
+    min-width: 200px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    transition: 500ms linear;
 }
 .foot {
     height: 30px;
 }
-.cartBtn:hover {
+.cartBtn:hover, .isCartedBtn:hover {
     scale: 1.1;
     transition: 200ms linear;
 }
@@ -427,17 +452,21 @@ body {
     font-size: 1.2em;
     font-weight: bold;
 }
+.emptyProduct h5{
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
 .CartItems{
     position: relative;
     display: flex;
     flex-wrap: wrap;
     top: 160px;
 }
-.CartItems h4{
-    font-weight: bold;
-    font-size: 1.2em;
-    display: flex;
-    justify-content: center;
+.empty{
+
+
 }
 .cartitem{
     border: 2px solid #fffb11;
@@ -579,3 +608,4 @@ body {
     display: flex;
     justify-content: space-between;
 }
+

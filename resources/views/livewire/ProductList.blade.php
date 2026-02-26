@@ -1,5 +1,6 @@
+
 <div class="products">
-    @foreach($products as $product)
+    @forelse($products as $product)
         <div class="product">
             <img src="{{ asset('assets/images/' . $product->image) }}" alt="{{$product-> name}}">
             <h1>{{ $product->name }}</h1>
@@ -9,5 +10,9 @@
                 <a href="{{ route('productDetails', $product-> id) }}">Details</a>
             </div>
         </div>
-    @endforeach
+    @empty
+        <div class="emptyProduct">
+            <h5>No such items found</h5>
+        </div>
+    @endforelse
 </div>
